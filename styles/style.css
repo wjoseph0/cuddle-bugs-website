@@ -1,0 +1,28 @@
+header {
+    height: 12vh;
+    width: 100%;
+    background-color: #dddddd;
+    font-size: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top:0;
+    position: sticky;
+}
+
+body {
+    background-color: #eeeeee;
+}
+
+#title {
+    margin-left: 10px;
+}
+  
+#about, #contact {
+    height: 6vh;
+    background-color: #90ee90;
+    border: none;
+    border-radius: 10px;
+    margin-right: 10px;
+    padding: 0px 20px 0px 20px;
+}
