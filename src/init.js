@@ -25,7 +25,7 @@ function setMain() {
 
   const INFO = document.createElement("p");
   INFO.id = "info";
-  INFO.textContent = "We are a Licensed Child Care Provider that offers care for 6 weeks old through 12 years old."
+  INFO.textContent = "We are a licensed child care provider that offers care for 6 weeks old through 12 years old."
 
   const CONTACT_BUTTON = document.createElement("button");
   CONTACT_BUTTON.id = "contact";
