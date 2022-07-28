@@ -1,46 +1,58 @@
-module.exports = buildWebsite;
+import Logo from './logo.jpg';
 
 function setHeader() {
   const HEADER = document.createElement("header");
-  const TITLE = document.createElement("h1");
+
+  const TITLE = document.createElement('h1');
   TITLE.id = "title";
   TITLE.textContent = "Cuddle Bugs Child Care";
+
+  const NAVBAR = document.createElement('div');
+  NAVBAR.id = "navbar";
+
+  const HOME_BUTTON = document.createElement("button");
+  HOME_BUTTON.id = "homeButton";
+  HOME_BUTTON.textContent = "Home";
+
+  const ABOUT_BUTTON = document.createElement("button");
+  ABOUT_BUTTON.id = "aboutButton";
+  ABOUT_BUTTON.textContent = "About";
+
+  const CONTACT_BUTTON = document.createElement("button");
+  CONTACT_BUTTON.id = "contactButton";
+  CONTACT_BUTTON.textContent = "Contact";
+
+  NAVBAR.append(HOME_BUTTON, ABOUT_BUTTON, CONTACT_BUTTON);
+
   HEADER.appendChild(TITLE);
+  HEADER.appendChild(NAVBAR);
 
   return HEADER;
 }
 
-function setMain() {
-  const MAIN = document.createElement("main");
+export default function setMain() {
+  let MAIN = document.createElement('main');
 
-  //Remove all children from MAIN
-  while (MAIN.firstChild) {
-    MAIN.removeChild(MAIN.firstChild);
+  if (document.querySelector('main')) {
+    MAIN = document.querySelector('main');
   }
 
-  const LOGO = document.createElement("img");
+  const LOGO = document.createElement('img');
   LOGO.id = "logo";
-  LOGO.src = "./assets/logo.jpg";
+  LOGO.src = Logo;
   LOGO.alt = "logo";
 
-  const INFO = document.createElement("p");
-  INFO.id = "info";
-  INFO.textContent = "We are a licensed child care provider that offers care for 6 weeks old through 12 years old."
-
-  const CONTACT_BUTTON = document.createElement("button");
-  CONTACT_BUTTON.id = "contact";
-  CONTACT_BUTTON.textContent = "Contact Us";
-
   MAIN.appendChild(LOGO);
-  MAIN.appendChild(INFO);
-  MAIN.appendChild(CONTACT_BUTTON);
 
-  return MAIN;
+  return MAIN
 }
 
-function buildWebsite() {
-  const CONTENT = document.getElementById("content");
+export function buildWebsite() {
+  const BODY = document.querySelector('body');
 
-  CONTENT.appendChild(setHeader());
-  CONTENT.appendChild(setMain());
+  const CONTENT = document.createElement('div');
+  CONTENT.id = "content";
+  CONTENT.append(setHeader(), setMain());
+
+  return BODY.appendChild(CONTENT);
 }
