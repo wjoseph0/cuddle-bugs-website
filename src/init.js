@@ -42,7 +42,12 @@ export default function setMain() {
   LOGO.src = Logo;
   LOGO.alt = "logo";
 
-  MAIN.appendChild(LOGO);
+  const FB_PAGE = document.createElement('div');
+  FB_PAGE.id = "FB_DIV";
+  FB_PAGE.innerHTML = '<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fcuddlebugschildcarecenter&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>'
+
+  /* MAIN.appendChild(LOGO); */
+  MAIN.appendChild(FB_PAGE);
 
   return MAIN
 }
